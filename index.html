@@ -386,7 +386,7 @@ body{font-family:'Noto Kufi Arabic',sans-serif;background:#1a1a2e;color:var(--te
 // ════════════════════════════════════════
 // CONSTANTS
 // ════════════════════════════════════════
-const RESEARCHER_PASS = '1234'; // ← غيّري كلمة المرور هنا
+const RESEARCHER_PASS = '5757'; // ← غيّري كلمة المرور هنا
 const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwjfc26Man_M0JoFt5n8afncaTZudbPhhoqWrP8NFu2pAawXKLpkv5Wl0InIh8_vecr/exec';
 
 const NEUTRAL_TRIALS = [
@@ -699,7 +699,7 @@ function showDPProbe(){
           اضغط على السهم المماثل لمكان المثلث
         </div>
         ${isMobile?`
-        <div style="display:flex;gap:24px;margin-top:28px;">
+        <div style="display:flex;gap:24px;margin-top:28px;" dir="ltr">
           <button onclick="advanceDP('left')" style="width:140px;height:64px;font-size:26px;border-radius:14px;border:2.5px solid #1a237e;background:#e8eaf6;color:#1a237e;font-family:inherit;font-weight:700;cursor:pointer;">← يسار</button>
           <button onclick="advanceDP('right')" style="width:140px;height:64px;font-size:26px;border-radius:14px;border:2.5px solid #1a237e;background:#e8eaf6;color:#1a237e;font-family:inherit;font-weight:700;cursor:pointer;">يمين →</button>
         </div>`:''}
