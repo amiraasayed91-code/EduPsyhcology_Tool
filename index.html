@@ -835,7 +835,7 @@ function advanceDP(resp){
 }
 function afterDP(){
   document.getElementById('expcontent').innerHTML='<div class="fixation"></div>';
-  showRC(2,4000,()=>showInst('wl',startWordList));
+ showInst('wl',startWordList);setTimeout(()=>showRC(2,4000,()=>{}),500);
 }
 
 // ════════════════════════════════════════
@@ -964,7 +964,7 @@ function submitRec(){
       correct:((shown&&r==='old')||(!shown&&r==='new'))?1:0});
   });
   document.getElementById('expcontent').innerHTML='<div class="fixation"></div>';
-  showRC(4,4000,()=>finishExp());
+  ss('s-thanks');showRC(4,4000,()=>finishExp());
 }
 
 // ════════════════════════════════════════
