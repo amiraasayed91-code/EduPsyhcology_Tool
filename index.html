@@ -527,12 +527,7 @@ function startFaceLoop(){
       const dom=Object.keys(ex).reduce((a,b)=>ex[a]>ex[b]?a:b);
       const conf=Math.round(ex[dom]*100);
       // Display: positive/negative only
-      const posLabel=pos>=neg?`😊 إيجابي ${pos}%`:'';
-      const negLabel=neg>pos?`😔 سلبي ${neg}%`:'';
-      document.getElementById('came').textContent=pos>=neg?`😊 إيجابي ${pos}%`:`😔 سلبي ${neg}%`;
-      document.getElementById('cambars').innerHTML=`
-        <div class="erow"><span style="width:44px">😊 إيجابي</span><div class="ebg"><div class="efg" style="width:${pos}%;background:#4caf50"></div></div><span style="width:30px;text-align:right">${pos}%</span></div>
-        <div class="erow"><span style="width:44px">😔 سلبي</span><div class="ebg"><div class="efg" style="width:${neg}%;background:#e53935"></div></div><span style="width:30px;text-align:right">${neg}%</span></div>`;
+      document.getElementById('came').textContent='';
       DB.emotions.push({ts:new Date().toISOString(),phase:currentPhase,dom,conf,
         happy:Math.round(ex.happy*100),sad:Math.round(ex.sad*100),angry:Math.round(ex.angry*100),
         fearful:Math.round(ex.fearful*100),disgusted:Math.round(ex.disgusted*100),
