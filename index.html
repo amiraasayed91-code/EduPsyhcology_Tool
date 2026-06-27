@@ -424,7 +424,7 @@ body{font-family:'Noto Kufi Arabic',sans-serif;background:#1a1a2e;color:var(--te
 // ════════════════════════════════════════
 // CONSTANTS
 // ════════════════════════════════════════
-const RESEARCHER_PASS = '1234'; // ← غيّري كلمة المرور هنا
+const RESEARCHER_PASS = '5757'; // ← غيّري كلمة المرور هنا
 const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwjfc26Man_M0JoFt5n8afncaTZudbPhhoqWrP8NFu2pAawXKLpkv5Wl0InIh8_vecr/exec';
 
 // ════════════════════════════════════════
@@ -523,7 +523,7 @@ function startFaceLoop(){
       if(!r)return;
       const ex=r.expressions;
       // Positive = happy + surprised + neutral (neutral treated as non-negative)
-      const pos=Math.round((ex.happy+ex.surprised+ex.neutral)*100);
+      const pos=Math.round((ex.happy+ex.surprised)*100);
       const neg=Math.round((ex.sad+ex.angry+ex.fearful+ex.disgusted)*100);
       const dom=Object.keys(ex).reduce((a,b)=>ex[a]>ex[b]?a:b);
       const conf=Math.round(ex[dom]*100);
