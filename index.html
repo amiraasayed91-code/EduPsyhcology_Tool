@@ -769,7 +769,7 @@ function runDPTrial(){
   if(dpIdx>=dpAllTrials.length){document.removeEventListener('keydown',dpKeyHandler);afterDP();return;}
   const tot=dpAllTrials.length,pct=Math.round(dpIdx/tot*100);
   document.getElementById('bprog').style.width=pct+'%';
-  document.getElementById('btrial').textContent=`${dpIdx<10?'تجريبي':'فعلي'} — ${dpIdx+1}/${tot}`;
+  document.getElementById('btrial').textContent=`${dpIdx<NEUTRAL_TRIALS.length?'تجريبي':'فعلي'} — ${dpIdx+1}/${tot}`;
   dpCurrent=dpAllTrials[dpIdx];
   dpCurrent.leftIsEmo=Math.random()<.5;
   dpCurrent.probeSide=Math.random()<.5?'left':'right';
@@ -840,7 +840,7 @@ function advanceDP(resp){
   if(dpPhase!=='probe')return;
   const rt=Math.round(performance.now()-dpProbeStart);
   const t=dpCurrent;
-  DB.dotProbe.push({trialNum:dpIdx+1,trialType:dpIdx<10?'practice':'experimental',
+  DB.dotProbe.push({trialNum:dpIdx+1,trialType:dpIdx<NEUTRAL_TRIALS.length?'practice':'experimental',
     id:t.id,condition:t.cond,category:t.cat,emotionalImage:t.emo,neutralImage:t.neu,
     emoSide:t.leftIsEmo?'left':'right',probeSide:t.probeSide,congruency:t.congruent,
     response:resp||'timeout',correct:resp===t.probeSide?1:0,rt_ms:resp?rt:null,ts:new Date().toISOString()});
